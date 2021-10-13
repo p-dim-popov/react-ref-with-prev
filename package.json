@@ -1,0 +1,45 @@
+{
+  "name": "react-ref-with-prev",
+  "version": "0.0.1",
+  "description": "Simple API to track changes to React reference changes ",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "lint": "eslint src/*",
+    "format": "eslint src/* --fix",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/p-dim-popov/react-ref-with-prev.git"
+  },
+  "keywords": [
+    "react",
+    "createRef",
+    "useRef"
+  ],
+  "author": "Peter Popov <p.dim.popov@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/p-dim-popov/react-ref-with-prev/issues"
+  },
+  "homepage": "https://github.com/p-dim-popov/react-ref-with-prev#readme",
+  "files": [
+    "lib/**/*"
+  ],
+  "devDependencies": {
+    "@types/react": "^17.0.29",
+    "typescript": "^4.4.4"
+  },
+  "peerDependencies": {
+    "react": "^16.8.0"
+  },
+  "dependencies": {
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-airbnb": "^18.2.1"
+  }
+}
