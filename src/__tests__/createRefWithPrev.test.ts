@@ -1,4 +1,4 @@
-import { createRefWithPrev } from '../createRefWithPrev';
+import { createRefWithPrev, IOptions } from '../createRefWithPrev';
 
 describe('initial value', () => {
   it('should be null when not specified', () => {
@@ -40,5 +40,42 @@ describe('prev', () => {
     const ref = createRefWithPrev(div);
 
     expect(ref.prev).toBeNull();
+  });
+})
+
+describe('onChange', () => {
+  it('should be called when passed directly', function () {
+    const onChange = jest.fn();
+    const ref = createRefWithPrev(null, onChange);
+    ref();
+
+    expect(onChange).toBeCalledTimes(1);
+  });
+
+  it('should be called when passed through options object', function () {
+    const onChange = jest.fn();
+    const ref = createRefWithPrev(null, { onChange });
+    ref();
+
+    expect(onChange).toBeCalledTimes(1);
+  });
+})
+
+describe('onBeforeChange', () => {
+  it('should be called when passed', function () {
+    const onBeforeChange = jest.fn();
+    const ref = createRefWithPrev(null, { onBeforeChange });
+    ref();
+
+    expect(onBeforeChange).toBeCalledTimes(1);
+  });
+
+  it('should be called before onChange', function () {
+    const options = {
+      onBeforeChange: jest.fn(),
+      onChange: () => expect(options.onBeforeChange).toBeCalled(),
+    } as IOptions;
+
+    createRefWithPrev(null, options)();
   });
 })
