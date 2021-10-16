@@ -9,8 +9,8 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
-    "lint": "eslint src/*",
-    "format": "eslint src/* --fix",
+    "lint": "eslint src/**/*.ts",
+    "format": "npm run lint --fix",
     "test": "jest --config jest.config.json"
   },
   "repository": {

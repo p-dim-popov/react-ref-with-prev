@@ -6,5 +6,8 @@
     "browser": true
   },
   "rules": {
-  }
+    "no-underscore-dangle": "off",
+    "import/extensions": "off"
+  },
+  "ignorePatterns": ["src/__tests__/**/*"]
 }

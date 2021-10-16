@@ -10,11 +10,15 @@ export interface IOptions {
 }
 
 type IOverload = {
+  // eslint-disable-next-line no-unused-vars
   <T extends Element> (initialValue?: T | null, onChange?: Function): RefObjectWithPrev<T>;
+  // eslint-disable-next-line no-unused-vars
   <T extends Element> (initialValue?: T | null, options?: IOptions): RefObjectWithPrev<T>;
 }
 
-export const createRefWithPrev: IOverload = <T extends Element> (initialValue?: T | null, options?: Function | IOptions): RefObjectWithPrev<T> => {
+export const createRefWithPrev: IOverload = <T extends Element> (
+  initialValue?: T | null, options?: Function | IOptions,
+): RefObjectWithPrev<T> => {
   const _options = typeof options === 'function' ? { onChange: options } as IOptions : options;
 
   const set = ((ref: T) => {
