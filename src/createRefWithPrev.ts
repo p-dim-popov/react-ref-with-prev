@@ -1,24 +1,22 @@
 import { RefObject } from 'react';
 
-export interface RefObjectWithPrev<T> extends RefObject<T>, Function {
+type BaseRefObjectWithPrev<T> = RefObject<T> & ((newRef?: T) => void);
+
+export interface RefObjectWithPrev<T> extends BaseRefObjectWithPrev<T> {
     readonly prev: T | null;
 }
 
-export interface IOptions {
-  initialValue?: Element;
+export interface IOptions<T = any> {
+  initialValue?: T;
   onChange?: Function;
   onBeforeChange?: Function;
 }
 
-type IOverload = {
-  // eslint-disable-next-line no-unused-vars
-  <T> (onChange?: Function): RefObjectWithPrev<T>;
-  // eslint-disable-next-line no-unused-vars
-  <T> (options?: IOptions): RefObjectWithPrev<T>;
-}
-
-export const createRefWithPrev: IOverload = <T> (
-  onChange?: IOptions | Function,
+export const createRefWithPrev:
+  (<T> (onChange?: Function) => RefObjectWithPrev<T>)
+  & (<T> (options?: IOptions<T>) => RefObjectWithPrev<T>)
+  = <T> (
+  onChange?: IOptions<T> | Function,
 ): RefObjectWithPrev<T> => {
   const _options = typeof onChange === 'function' ? { onChange } : onChange;
 
