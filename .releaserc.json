@@ -1,6 +1,6 @@
 {
   "branches": [
-    "main"
+    "dev"
   ],
   "plugins": [
     [
@@ -8,6 +8,8 @@
       {
         "preset": "angular",
         "releaseRules": [
+          { "breaking": true, "release": "major"},
+          { "type":  "refactor", "release": "patch" }
         ],
         "parserOpts": {
           "noteKeywords": ["BREAKING CHANGE", "BREAKING CHANGES"]
