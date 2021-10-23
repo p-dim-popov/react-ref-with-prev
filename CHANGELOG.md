@@ -1,3 +1,10 @@
+## [2.0.2](https://github.com/p-dim-popov/react-ref-with-prev/compare/v2.0.1...v2.0.2) (2021-10-23)
+
+
+### Bug Fixes
+
+* **package.json:** react peer dependency accept all greater than 16.8.0 ([56d8805](https://github.com/p-dim-popov/react-ref-with-prev/commit/56d8805c1c484035b78d9bf5309104fe3806f655))
+
 ## [2.0.1](https://github.com/p-dim-popov/react-ref-with-prev/compare/v2.0.0...v2.0.1) (2021-10-17)
 
 # [2.0.0](https://github.com/p-dim-popov/react-ref-with-prev/compare/v1.0.1...v2.0.0) (2021-10-17)

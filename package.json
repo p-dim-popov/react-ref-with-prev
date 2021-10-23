@@ -1,6 +1,6 @@
 {
   "name": "react-ref-with-prev",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "Simple API to track changes to React reference changes ",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
