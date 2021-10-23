@@ -1,13 +1,21 @@
 {
-  "extends": ["airbnb"],
+  "extends": [
+    "airbnb",
+    "airbnb-typescript"
+  ],
   "plugins": ["@typescript-eslint"],
   "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "createDefaultProgram": true,
+    "project": ["tsconfig.json"]
+  },
   "env": {
     "browser": true
   },
   "rules": {
+    "@typescript-eslint/naming-convention": "off",
     "no-underscore-dangle": "off",
     "import/extensions": "off"
   },
-  "ignorePatterns": ["src/__tests__/**/*"]
+  "ignorePatterns": ["src/__tests__/**/*", "lib/**/*"]
 }
